@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
 
   return (
-    <div className='bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900'>
+    <div className='bg-gray-900 text-white h-screen'>
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />

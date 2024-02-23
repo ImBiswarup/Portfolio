@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <>
-      <section className="text-gray-400 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 body-font h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row items-center px-5 py-12 md:py-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+      <section className="bg-gray-900 text-white body-font h-screen">
+        <div className="container mx-auto flex flex-col md:flex-row items-center px-5 py-12 md:py-24 ">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 flex items-center justify-center">
             <img className="object-cover object-center rounded-xl shadow-md w-full md:w-4/5 lg:w-3/4 xl:w-1/2" alt="hero" src={myPic} />
           </div>
