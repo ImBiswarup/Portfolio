@@ -5,10 +5,10 @@ import ecom from "../images/ecom.jpeg";
 
 const projectItems = [
   {
-    image: google, tStack: "React JS, Tailwind CSS, RapidAPI", title: "Google home page clone", liveDemoLink: "https://fake-google-search.netlify.app/", codeLink: "https://github.com/ImBiswarup/Google_clone"
+    image: yt, tStack: "React JS, Tailwind CSS, RapidAPI", title: "Youtube clone", liveDemoLink: "https://realfreetube.netlify.app/", codeLink: "https://github.com/ImBiswarup/Youtube_Clone"
   },
   {
-    image: yt, tStack: "React JS, Tailwind CSS, RapidAPI", title: "Youtube clone", liveDemoLink: "https://realfreetube.netlify.app/", codeLink: "https://github.com/ImBiswarup/Youtube_Clone"
+    image: google, tStack: "React JS, Tailwind CSS, RapidAPI", title: "Google home page clone", liveDemoLink: "https://fake-google-search.netlify.app/", codeLink: "https://github.com/ImBiswarup/Google_clone"
   },
   {
     image: ecom, tStack: "React JS, Tailwind CSS", title: "eCommerce website", liveDemoLink: "https://real-ekart.netlify.app/", codeLink: "https://github.com/ImBiswarup/eCommerce"
@@ -25,7 +25,7 @@ const Project = () => {
       {projectItems.map((item, index) => (
         <section key={index} className="text-gray-400 bg-gray-900 body-font">
           <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
-            <div className="lg:w-1/2 w-full mb-10 lg:mb-0">
+            <div className="lg:w-1/2 w-full mb-10 lg:mb-0 ">
               <img className="object-cover object-center rounded-lg" alt="hero" src={item.image} />
             </div>
             <div className="lg:w-1/2 w-full lg:pl-10">

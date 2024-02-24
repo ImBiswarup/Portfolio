@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
 
   return (
-    <div className='bg-gray-900 text-white h-screen'>
+    <div className='bg-gray-900 text-white selection:bg-blue-300 selection:text-blue-900'>
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />

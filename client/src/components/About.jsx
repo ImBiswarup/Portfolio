@@ -6,15 +6,15 @@ import { SiExpress, SiTailwindcss, SiMongodb } from "react-icons/si";
 const About = () => {
 
   const techStackItems = [
-    { icon: <FaHtml5 />, title: 'HTML 5', description: 'HyperText Markup Language' },
-    { icon: <FaCss3 />, title: 'CSS 3', description: 'Cascading Style Sheets' },
-    { icon: <FaJs />, title: 'JavaScript', description: 'Programming Language' },
-    { icon: <SiMongodb />, title: 'MongoDB', description: 'NoSQL Database' },
-    { icon: <SiExpress />, title: 'Express', description: 'Node Express framework' },
-    { icon: <FaReact />, title: 'React JS', description: 'JavaScript Library for UI' },
-    { icon: <FaNodeJs />, title: 'Node JS', description: 'JavaScript Runtime' },
-    { icon: <SiTailwindcss />, title: 'Tailwind CSS', description: 'css framework' },
-    { icon: <FaPython />, title: 'Python', description: 'programming languages' },
+    { icon: <FaHtml5 />, title: 'HTML', description: 'Have a good knowledge and experience as well ' },
+    { icon: <FaCss3 />, title: 'CSS', description: 'Though not perfect but still can do better than others' },
+    { icon: <FaJs />, title: 'JavaScript', description: 'Know the main funda, still learning...' },
+    { icon: <SiMongodb />, title: 'MongoDB', description: 'Beginner at fullstack' },
+    { icon: <SiExpress />, title: 'Express JS', description: 'Beginner at fullstack' },
+    { icon: <FaReact />, title: 'React JS', description: 'Done the mejority of my frontend projects on it' },
+    { icon: <FaNodeJs />, title: 'Node JS', description: 'Beginner at fullstack' },
+    { icon: <SiTailwindcss />, title: 'Tailwind CSS', description: 'The best & my favourite CSS framework available in the market' },
+    { icon: <FaPython />, title: 'Python', description: 'The best & my favourite programming language' },
   ];
 
   return (
@@ -103,12 +103,12 @@ const About = () => {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex-col justify-center">
             {techStackItems.map((item, index) => (
-              <div key={index} className="p-6 shadow-md">
-                <div className="w-16 h-16 mb-4 mx-auto text-indigo-400 text-6xl flex items-center justify-center">
+              <div key={index} className="p-6 shadow-md rounded transition-all group hover:bg-gray-400 ">
+                <div className="w-16 h-16 mb-4 mx-auto text-indigo-400 group-hover:text-indigo-700 text-6xl flex items-center justify-center">
                   {item.icon}
                 </div>
-                <h2 className="text-xl font-bold mb-2 text-white">{item.title}</h2>
-                <p className="text-gray-400 font-semibold">{item.description}</p>
+                <h2 className="text-xl font-bold mb-2 group-hover:text-black text-white">{item.title}</h2>
+                <p className="text-gray-400 font-semibold group-hover:text-black ">{item.description}</p>
               </div>
             ))}
           </div>

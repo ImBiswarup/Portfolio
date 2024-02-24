@@ -5,7 +5,7 @@ const Navbar = () => {
     const location = useLocation();
 
     const isActive = (path) => {
-        return location.pathname === path ? 'text-white' : 'text-gray-400';
+        return location.pathname === path ? 'text-white scale-125 font-semibold' : 'text-gray-400';
     };
 
     return (
