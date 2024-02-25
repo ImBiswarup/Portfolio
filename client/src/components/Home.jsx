@@ -6,7 +6,6 @@ const Home = () => {
 
   const location = useLocation();
 
-  // Conditionally apply a class to the body element to disable the scrollbar
   React.useEffect(() => {
     if (location.pathname === '/') {
       document.body.style.overflow = 'hidden';
@@ -14,7 +13,6 @@ const Home = () => {
       document.body.style.overflow = 'auto';
     }
 
-    // Cleanup function to reset the scrollbar when the component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
