@@ -1,6 +1,7 @@
 import React from 'react';
 import myPic from '../images/my_img.jpg';
 import { Link, useLocation } from 'react-router-dom';
+import myCv from "../components/utils/Biswarup_Ghosh_CV.pdf"
 
 const Home = () => {
 
@@ -53,7 +54,7 @@ const Home = () => {
               <Link to="/contact" className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ">
                 <span className='hover:scale-125 transition-all text-xl'>Hire Me</span>
               </Link>
-              <a href="Biswarup_Ghosh_CV.pdf" download="Biswarup_Ghosh_CV.pdf">
+              <a href={myCv} download = "Biswarup_Ghosh_CV.pdf">
                 <button className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg ">
                   <span className='hover:scale-125 transition-all text-xl'>Download CV</span>
                 </button>
