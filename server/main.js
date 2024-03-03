@@ -1,16 +1,20 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+const messageRoutes = require('./Routes/Message');
+const mongoDB = require('./DB/Connection');
+
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
-app.get('/', (req, res) =>
-  res.json('Hello World!')
-);
-app.get('/home', (req, res) =>
-  res.json('Hello World! home page')
-);
+mongoDB('mongodb://127.0.0.1:27017/form');
 
-app.listen(port, () =>
-  console.log(`Example app listening on port ${port}!`));
+app.use(bodyParser.json());
+
+app.use(messageRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

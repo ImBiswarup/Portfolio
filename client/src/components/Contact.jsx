@@ -3,9 +3,38 @@ import { IoIosSend } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { useLocation } from 'react-router';
 
-
-
 const Contact = () => {
+
+  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      setSubmissionStatus('success');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmissionStatus('error');
+    }
+    finally {
+      setName('');
+      setEmail('');
+      setMessage('');
+    }
+  };
 
   const location = useLocation();
 
@@ -21,9 +50,7 @@ const Contact = () => {
     };
   }, [location.pathname]);
 
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+
 
   const loadMessage = (e) => {
     setMessage(e.target.value);
@@ -33,12 +60,6 @@ const Contact = () => {
   }
   const loadEmail = (e) => {
     setEmail(e.target.value);
-  }
-
-  const show = () => {
-    console.log("The name is " + name)
-    console.log("The email is " + email)
-    console.log("The message is " + message)
   }
 
 
@@ -91,8 +112,20 @@ const Contact = () => {
                 </div>
               </div>
               <div className="p-2 w-full">
-                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-xl hover:text-white cursor-pointer hover:scale-125 transition-all"><span onClick={show} className='text-center flex items-center justify-center'><IoIosSend /></span></button>
+                <button
+                  className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-xl hover:text-white cursor-pointer hover:scale-125 transition-all"
+                  onClick={handleSubmit}
+                >
+                  <span className='text-center flex items-center justify-center'><IoIosSend /></span>
+                </button>
+                {submissionStatus === 'success' && (
+                  <p className="text-green-500 mt-2">Message sent successfully!</p>
+                )}
+                {submissionStatus === 'error' && (
+                  <p className="text-red-500 mt-2">Error sending message. Please try again later.</p>
+                )}
               </div>
+
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
                 <a className="text-indigo-400">biswarupg451@gmail.com</a>
                 <p className="leading-normal my-5">Kolkata, West Bengal
