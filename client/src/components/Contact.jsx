@@ -72,14 +72,18 @@ const Contact = () => {
     {
       svgIcon: <FaInstagram />,
       color: "text-red-400",
+      link: "https://www.instagram.com/i_ambiswarup/",
+
     },
     {
       svgIcon: <FaTwitter />,
       color: "text-blue-400",
+      link: "https://twitter.com/Im_Biswarup",
     },
     {
       svgIcon: <FaLinkedin />,
       color: "text-sky-400",
+      link:"https://www.linkedin.com/in/biswarup-ghosh-61440828a/",
     },
   ];
 
@@ -88,7 +92,7 @@ const Contact = () => {
       <section className="text-gray-400 bg-gray-900 body-font relative h-screen">
         <div className="container px-5 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-white">Get in touch with me 😉</h1>
+            <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-white">Get in touch with me</h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-xl">Ask whatever you wanna know ...</p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
